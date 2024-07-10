@@ -21,6 +21,10 @@ importers:
         specifier: ^5.5.3
         version: 5.5.3
 
+  packages/CLI: {}
+
+  packages/local-API: {}
+
   packages/local-client:
     dependencies:
       react:
