@@ -23,9 +23,9 @@
   "references": [
     {
       "path": "./packages/local-client"
-    },
-    {
-      "path": "./packages/local-API"
     }
+    // {
+    //   "path": "./packages/local-API"
+    // }
   ]
 }
