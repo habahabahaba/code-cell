@@ -21,7 +21,14 @@ importers:
         specifier: ^5.5.3
         version: 5.5.3
 
-  packages/CLI: {}
+  packages/CLI:
+    devDependencies:
+      '@code-cell/local-api':
+        specifier: workspace:*
+        version: link:../local-API
+      commander:
+        specifier: ^12.1.0
+        version: 12.1.0
 
   packages/local-API: {}
 
@@ -877,6 +884,10 @@ packages:
 
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
+
+  commander@12.1.0:
+    resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
+    engines: {node: '>=18'}
 
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
@@ -2827,6 +2838,8 @@ snapshots:
   color-name@1.1.4: {}
 
   comma-separated-tokens@2.0.3: {}
+
+  commander@12.1.0: {}
 
   concat-map@0.0.1: {}
 
