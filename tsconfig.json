@@ -19,13 +19,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
-  },
-  "references": [
-    {
-      "path": "./packages/local-client"
-    }
-    // {
-    //   "path": "./packages/local-API"
-    // }
-  ]
+  }
+  // "references": [
+  //   {
+  //     "path": "./packages/CLI"
+  //   },
+  //   {
+  //     "path": "./packages/local-API"
+  //   }
+  // ]
 }
