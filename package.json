@@ -9,7 +9,7 @@
     "to_cli": "pnpm --filter=@code-cell/cli",
     "to_client": "pnpm --filter=@code-cell/local-client",
     "clean": "find ./ -name node_modules -type d -exec rm -rf {} +",
-    "dev": "pnpm --filter=@code-cell/local-client run dev",
+    "dev": "pnpm -r --parallel --stream run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

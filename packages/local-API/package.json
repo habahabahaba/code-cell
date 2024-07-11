@@ -7,15 +7,10 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc --watch --preserveWatchOutput"
+    "dev": "tsc --watch --preserveWatchOutput"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "workspace:*",
-    "@typescript-eslint/parser": "workspace:*",
-    "eslint": "workspace:*",
-    "typescript": "workspace:*"
-  }
+  "devDependencies": {}
 }
