@@ -1,5 +1,3 @@
-// From packages:
-// import serve from '@code-cell/local-api';
 // 3rd party:
 import { program } from 'commander';
 // Commands:
