@@ -14,6 +14,7 @@
     "@code-cell/local-api": "workspace:*"
   },
   "devDependencies": {
+    "@types/node": "^20.14.10",
     "commander": "^12.1.0"
   }
 }
