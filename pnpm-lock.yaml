@@ -35,6 +35,10 @@ importers:
         version: 12.1.0
 
   packages/local-API:
+    dependencies:
+      '@code-cell/local-client':
+        specifier: workspace:*
+        version: link:../local-client
     devDependencies:
       '@types/cors':
         specifier: ^2.8.17
