@@ -3,7 +3,9 @@
     "composite": true,
     "declaration": true,
     "rootDir": "src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "emitDeclarationOnly": true,
+    "allowImportingTsExtensions": true
   },
   "extends": "../../tsconfig.json"
   // "include": ["src"]
