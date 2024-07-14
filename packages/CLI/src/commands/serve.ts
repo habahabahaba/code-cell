@@ -9,6 +9,9 @@ interface ServeOptions {
   port: string;
 }
 
+console.log('ENV: ', process.env);
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
 // Commands:
 export const serveCommand = new Command()
   .command('serve [filename]') // [filename] is optional
@@ -18,7 +21,7 @@ export const serveCommand = new Command()
     try {
       const dir = path.join(process.cwd(), path.dirname(filename));
 
-      await serve(+options.port, path.basename(filename), dir);
+      await serve(+options.port, path.basename(filename), dir, isDevelopment);
       console.log(`
         Code-Cell successfully opened ${filename}. Navigate to http://localhost:${options.port} to continue working with cells.
         `);
