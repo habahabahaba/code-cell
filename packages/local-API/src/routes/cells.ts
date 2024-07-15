@@ -56,9 +56,7 @@ export default function createCellsRouter(
     // Writing the cells to the file:
     await fs.writeFile(filePath, serializedCells, 'utf-8');
 
-    response
-      .status(201)
-      .send({ message: 'The file was successfully created.' });
+    response.status(201).send({ serializedCells });
   });
 
   return router;
