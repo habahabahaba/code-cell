@@ -7,7 +7,7 @@ import { dirname } from 'path';
 import { createRequire } from 'module';
 
 // Routes:
-import createCellsRouter from './routes/cells.ts';
+import createCellsRouter from './routes/cells.js';
 
 export function serve(
   port: number,
@@ -16,12 +16,16 @@ export function serve(
   useProxy: boolean = false
 ): Promise<void> {
   const app = express();
+
+  // Adding routes:
+  app.use(createCellsRouter(filename, dir));
+
   if (useProxy) {
     app.use(
       createProxyMiddleware({
         target: `http://localhost:5173`,
         ws: true,
-        //   logger: null, // logLevel: 'silent' is no longer available;
+        // logger: console, // logLevel: 'silent' is no longer available;
       })
     );
   } else {
@@ -36,9 +40,6 @@ export function serve(
     // Serve static files from the directory containing the resolved client path
     app.use(express.static(dirname(clientPath)));
   }
-
-  // Adding routes:
-  app.use(createCellsRouter(filename, dir));
 
   return new Promise<void>((resolve, reject) => {
     app.listen(port, resolve).on('error', reject);

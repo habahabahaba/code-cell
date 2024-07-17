@@ -9,7 +9,7 @@ interface ServeOptions {
   port: string;
 }
 
-console.log('ENV: ', process.env);
+// console.log('ENV: ', process.env);
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 // Commands:
@@ -17,7 +17,7 @@ export const serveCommand = new Command()
   .command('serve [filename]') // [filename] is optional
   .description('Open a file for editing')
   .option('-p, --port <number>', 'port to run code-cell server on', '5311')
-  .action(async (filename = 'cells.js', options: ServeOptions) => {
+  .action(async (filename = 'notebook.js', options: ServeOptions) => {
     try {
       const dir = path.join(process.cwd(), path.dirname(filename));
 

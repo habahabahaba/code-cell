@@ -22,16 +22,16 @@ export default function createCellsRouter(
   router.use(express.json());
 
   const filePath = path.join(dir, filename);
-
+  // console.log('filePath from local-API: ', filePath);
   router.get('/cells', async (request, response) => {
     try {
       // Trying to read the file:
       const result = await fs.readFile(filePath, { encoding: 'utf-8' });
-
+      // console.log('Fetch result from local-API: ', result);
       // Parsing a list of cells:
       const parsedResult = JSON.parse(result);
-      // Sending list of cells back to the browser:
 
+      // Sending list of cells back to the browser:
       response.send(parsedResult);
     } catch (error) {
       if (
