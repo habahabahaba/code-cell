@@ -3,19 +3,29 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "main": "dist/index.js",
+  "bin": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc --watch --preserveWatchOutput"
+    "dev": "tsc --watch --preserveWatchOutput",
+    "prepublishOnly": "esbuild src/index.ts --platform=node --format=esm --target=es2020 --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@code-cell/local-api": "workspace:*"
+    "@code-cell/local-client": "workspace:*"
   },
   "devDependencies": {
+    "@code-cell/local-api": "workspace:*",
+    "commander": "^12.1.0",
     "@types/node": "^20.14.10",
-    "commander": "^12.1.0"
+    "esbuild": "^0.23.0"
   }
 }
