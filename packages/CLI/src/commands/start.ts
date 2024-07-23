@@ -13,8 +13,8 @@ interface ServeOptions {
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 // Commands:
-export const serveCommand = new Command()
-  .command('serve [filename]') // [filename] is optional
+export const startCommand = new Command()
+  .command('start [filename]') // [filename] is optional
   .description('Open a file for editing')
   .option('-p, --port <number>', 'port to run code-cell server on', '5311')
   .action(async (filename = 'cellsData.js', options: ServeOptions) => {
@@ -33,13 +33,13 @@ export const serveCommand = new Command()
         error.code === 'EADDRINUSE'
       ) {
         console.log(
-          'THIS PORT IS ALREADY IN USE. Try running Code-Cell on a different port. (serve -p [new port number]).'
+          'THIS PORT IS ALREADY IN USE. Try running Code-Cell on a different port. (start -p [new port number]).'
         );
       } else if (error instanceof Error) {
         console.log(error.message);
       } else {
         console.log(
-          `There was a problem while executing the serve command: ${JSON.stringify(error)}`
+          `There was a problem while executing the start command: ${JSON.stringify(error)}`
         );
       }
       process.exit(1);

@@ -2,19 +2,19 @@
   "name": "@code-cell/cli",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "type": "commonjs",
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
-  "bin": "dist/index.js",
+  "main": "dist/index.cjs",
+  "bin": "dist/index.cjs",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc --watch --preserveWatchOutput",
-    "prepublishOnly": "esbuild src/index.ts --platform=node --format=esm --target=es2020 --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
+    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\" --external:@code-cell/local-client/dist/index.html"
   },
   "keywords": [],
   "author": "",
@@ -24,8 +24,7 @@
   },
   "devDependencies": {
     "@code-cell/local-api": "workspace:*",
-    "commander": "^12.1.0",
-    "@types/node": "^20.14.10",
-    "esbuild": "^0.23.0"
+    "@types/node": "^20.14.11",
+    "commander": "^12.1.0"
   }
 }

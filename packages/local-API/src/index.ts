@@ -4,7 +4,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 import express from 'express';
 // Node:
 import { dirname } from 'path';
-import { createRequire } from 'module';
+// import { createRequire } from 'module';
 
 // Routes:
 import createCellsRouter from './routes/cells.js';
@@ -30,11 +30,14 @@ export function serve(
     );
   } else {
     // Resolve the client path
-    //   console.log('import.meta.url: ', import.meta.url);
-    const require = createRequire(import.meta.url);
     const clientPath = require.resolve(
       '@code-cell/local-client/dist/index.html'
     );
+    //   console.log('import.meta.url: ', import.meta.url);
+    // const require = createRequire(import.meta.url);
+    // const clientPath = require.resolve(
+    //   '@code-cell/local-client/dist/index.html'
+    // );
     //   console.log('clientPath: ', clientPath);
 
     // Serve static files from the directory containing the resolved client path

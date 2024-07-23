@@ -3,8 +3,8 @@
 // 3rd party:
 import { program } from 'commander';
 // Commands:
-import { serveCommand } from './commands/serve.js';
+import { startCommand } from './commands/start.js';
 
-program.addCommand(serveCommand);
+program.addCommand(startCommand);
 
 program.parse(process.argv);
